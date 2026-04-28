@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>François Duquesne | Software Engineer</title>
+  <meta name="description" content="François Duquesne — software engineer building data-intensive interfaces for intelligence platforms, satellite operations, and scientific workflows. Based in Belgium." />
+  <meta property="og:title" content="François Duquesne | Software Engineer" />
+  <meta property="og:description" content="Software engineer building data-intensive interfaces for intelligence platforms, satellite operations, and scientific workflows." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://francoisduquesne.com/" />
+  <meta property="og:image" content="https://francoisduquesne.com/Photo_CV3.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="François Duquesne | Software Engineer" />
+  <meta name="twitter:description" content="Software engineer in Belgium building data-intensive interfaces for intelligence platforms, satellite operations, and scientific workflows." />
+  <meta name="twitter:image" content="https://francoisduquesne.com/Photo_CV3.png" />
+  <link rel="canonical" href="https://francoisduquesne.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+:root {
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --text: #18181b;
+  --muted: #71717a;
+  --subtle: #a1a1aa;
+  --border: #e4e4e7;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --max: 680px;
+  --mono: "DM Mono", ui-monospace, monospace;
+}
+
+html.dark {
+  --bg: #0f0f11;
+  --surface: #18181b;
+  --text: #fafafa;
+  --muted: #a1a1aa;
+  --subtle: #52525b;
+  --border: #27272a;
+  --accent: #60a5fa;
+  --accent-hover: #93c5fd;
+}
+
+html.dark .btn-primary { background: #fafafa; color: #18181b; }
+html.dark .btn-primary:hover { background: #e4e4e7; }
+html.dark .btn-outline { background: var(--surface); border-color: var(--border); color: var(--text); }
+html.dark .btn-outline:hover { border-color: var(--text); }
+html.dark .project-card:hover { background: #1c1c1f; }
+html.dark .hero-photo img { filter: grayscale(15%) brightness(0.92); }
+
+/* ── DARK TOGGLE ── */
+.nav-dark-toggle {
+  background: none; border: none; cursor: pointer;
+  padding: 0.3rem; border-radius: 6px;
+  color: var(--subtle); transition: color 0.15s, background 0.15s;
+  display: flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px;
+}
+.nav-dark-toggle:hover { color: var(--text); background: var(--border); }
+
+.nav-dark-icon {
+  display: block; width: 14px; height: 14px; border-radius: 50%;
+  border: 1.5px solid currentColor;
+  position: relative; overflow: hidden;
+}
+html:not(.dark) .nav-dark-icon::after {
+  content: ""; position: absolute;
+  inset: 0; background: currentColor;
+  clip-path: inset(0 50% 0 0);
+}
+html.dark .nav-dark-icon {
+  background: currentColor;
+  box-shadow: -3px -1px 0 1px var(--surface);
+  border-radius: 50%;
+}
+
+body {
+  font-family: "DM Sans", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ── NAV ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-inner {
+  max-width: 1040px; margin: 0 auto; padding: 0 2rem;
+  height: 56px; display: flex; align-items: center; justify-content: space-between;
+  background: rgba(250,250,249,0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid transparent;
+  box-shadow: none;
+  transition: max-width 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              margin 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              border-radius 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              padding 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* full-width underline — fades when scrolled */
+.nav::after {
+  content: "";
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 1px; background: var(--border);
+  transition: opacity 0.3s ease;
+}
+.nav.scrolled::after { opacity: 0; }
+
+.nav.scrolled .nav-inner {
+  max-width: 780px;
+  margin: 0.75rem auto 0;
+  border-radius: 100px;
+  border-color: var(--border);
+  height: 48px;
+  padding: 0 1.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+html.dark .nav-inner {
+  background: rgba(15,15,17,0.55);
+  backdrop-filter: blur(20px) saturate(180%);
+}
+html.dark .nav.scrolled .nav-inner {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+.nav-brand { font-weight: 500; font-size: 0.9rem; color: var(--text); }
+.nav-links { display: flex; gap: 1.75rem; list-style: none; }
+.nav-links a { font-size: 0.85rem; color: var(--muted); transition: color 0.15s; }
+.nav-links a:hover { color: var(--text); }
+
+/* ── LAYOUT ── */
+.page { max-width: 1040px; margin: 0 auto; padding: 56px 2rem 0; }
+
+section { padding: 5rem 0; border-top: 1px solid var(--border); }
+section:first-child { border-top: none; }
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 300; line-height: 1.15; letter-spacing: -0.03em; color: var(--text); }
+h2 { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle); margin-bottom: 2.5rem; }
+h3 { font-size: 1rem; font-weight: 500; color: var(--text); }
+p { color: var(--muted); line-height: 1.75; }
+strong { color: var(--text); font-weight: 500; }
+
+/* ── HERO ── */
+.hero { padding: 5rem 0 4rem; border-top: none; }
+.hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: start; }
+.hero-label {
+  font-size: 0.78rem; font-family: var(--mono); color: var(--muted);
+  margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;
+}
+.hero-label::before {
+  content: ""; display: inline-block;
+  width: 1.5rem; height: 1px; background: var(--muted);
+}
+.hero-intro { font-size: 1.05rem; margin-top: 1.5rem; max-width: 48ch; color: var(--muted); line-height: 1.75; }
+.hero-actions { margin-top: 2rem; display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.55rem 1.1rem; border-radius: 6px; font-size: 0.85rem;
+  font-family: inherit; font-weight: 500; cursor: pointer; transition: all 0.15s;
+  border: 1px solid transparent; text-decoration: none;
+}
+.btn-primary { background: var(--text); color: #fff; }
+.btn-primary:hover { background: #27272a; }
+.btn-outline { border-color: var(--border); color: var(--text); background: var(--surface); }
+.btn-outline:hover { border-color: var(--text); }
+
+.hero-photo {
+  display: flex;
+  justify-content: center;
+}
+.hero-photo img {
+  width: clamp(180px, 22vw, 260px);
+  aspect-ratio: 3/4; object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  filter: grayscale(8%);
+  object-position: 50% 15%;
+}
+
+.ticker-wrap {
+  margin-top: 3.5rem; overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.ticker { display: flex; gap: 1.5rem; animation: ticker 48s linear infinite; width: max-content; }
+.ticker-item {
+  font-size: 0.78rem; font-family: var(--mono); color: var(--subtle);
+  white-space: nowrap; padding: 0.3rem 0.75rem;
+  border: 1px solid var(--border); border-radius: 100px;
+  background: var(--surface);
+}
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── ABOUT ── */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.about-grid p + p { margin-top: 1rem; }
+
+/* ── EXPERIENCE / EDUCATION ── */
+.exp-list, .edu-list { display: grid; gap: 0; }
+
+.exp-item, .edu-item {
+  display: grid; grid-template-columns: 140px 1fr;
+  gap: 1.5rem; padding: 1.75rem 0;
+}
+.exp-item:first-child, .edu-item:first-child { border-top: 1px solid var(--border); }
+.exp-item:not(:last-child), .edu-item:not(:last-child) { border-bottom: 1px solid var(--border); }
+
+.exp-year, .edu-year { font-size: 0.78rem; font-family: var(--mono); color: var(--subtle); padding-top: 0.2rem; }
+.exp-role, .edu-degree { font-size: 1rem; font-weight: 500; color: var(--text); }
+.exp-company { font-size: 0.88rem; color: var(--muted); margin-top: 0.1rem; }
+.exp-company a { color: var(--accent); }
+.exp-company a:hover { text-decoration: underline; }
+.edu-school { font-size: 0.88rem; color: var(--muted); margin-top: 0.1rem; }
+.exp-details, .edu-note { margin-top: 0.6rem; font-size: 0.9rem; color: var(--muted); }
+.exp-bullets { margin-top: 0.75rem; padding-left: 1rem; display: grid; gap: 0.25rem; }
+.exp-bullets li { font-size: 0.85rem; color: var(--subtle); }
+
+/* ── PROJECTS GRID ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.project-card {
+  background: var(--surface);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: background 0.15s;
+}
+.project-card:hover { background: #f4f4f5; }
+html.dark .project-card:hover { background: #1c1c1f; }
+.project-card-title { font-size: 1rem; font-weight: 600; color: var(--text); }
+.project-card-meta { font-size: 0.78rem; font-family: var(--mono); color: var(--subtle); }
+.project-card-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.65; flex: 1; }
+.project-card-footer { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-top: 0.75rem; }
+.project-card-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.project-tag {
+  font-size: 0.72rem; font-family: var(--mono);
+  padding: 0.15rem 0.5rem; border-radius: 4px;
+  border: 1px solid var(--border); color: var(--muted);
+}
+.project-link {
+  font-size: 0.82rem; color: var(--accent); white-space: nowrap;
+  display: flex; align-items: center; gap: 0.3rem; transition: color 0.15s; flex-shrink: 0;
+}
+.project-link:hover { color: var(--accent-hover); text-decoration: underline; }
+
+/* ── SKILLS ── */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; }
+.skill-group-label { font-size: 0.78rem; font-family: var(--mono); color: var(--subtle); margin-bottom: 0.75rem; }
+.skill-items { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.skill-item {
+  font-size: 0.82rem; color: var(--muted);
+  padding: 0.2rem 0.6rem; border: 1px solid var(--border);
+  border-radius: 4px; background: var(--surface);
+  display: inline-flex; align-items: center; gap: 0.35rem;
+}
+.skill-note {
+  font-size: 0.68rem; font-family: var(--mono);
+  color: var(--subtle); letter-spacing: 0.02em;
+  margin-left: 0.3rem;
+}
+
+/* ── PERSONAL ── */
+.personal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+
+/* ── CONTACT ── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.contact-rows { display: grid; gap: 0; }
+.contact-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 0; gap: 1rem;
+}
+.contact-row:first-child { border-top: 1px solid var(--border); }
+.contact-row:not(:last-child) { border-bottom: 1px solid var(--border); }
+.contact-label { font-size: 0.8rem; font-family: var(--mono); color: var(--subtle); }
+.contact-link { font-size: 0.88rem; color: var(--accent); transition: color 0.15s; }
+.contact-link:hover { color: var(--accent-hover); text-decoration: underline; }
+
+.availability-box { border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; background: var(--surface); }
+.availability-dot {
+  display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: #22c55e; margin-right: 0.4rem;
+  box-shadow: 0 0 0 3px rgba(34,197,94,0.15);
+}
+.availability-status { font-size: 0.8rem; font-family: var(--mono); color: var(--muted); }
+.availability-title { font-size: 1rem; font-weight: 500; margin-top: 0.75rem; color: var(--text); }
+.availability-desc { font-size: 0.88rem; color: var(--muted); margin-top: 0.4rem; line-height: 1.6; }
+
+/* ── FOOTER ── */
+footer { border-top: 1px solid var(--border); padding: 2rem 0; }
+.footer-inner {
+  max-width: 1040px; margin: 0 auto; padding: 0 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-copy { font-size: 0.82rem; color: var(--subtle); }
+.footer-links { display: flex; gap: 1.25rem; }
+.footer-links a { font-size: 0.82rem; color: var(--subtle); transition: color 0.15s; }
+.footer-links a:hover { color: var(--text); }
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  filter: blur(4px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+.reveal.in > *:nth-child(1) { transition-delay: 60ms; }
+.reveal.in > *:nth-child(2) { transition-delay: 130ms; }
+.reveal.in > *:nth-child(3) { transition-delay: 200ms; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-photo { order: -1; }
+  .hero-photo img { width: 90px; }
+  .about-grid, .contact-grid, .personal-grid { grid-template-columns: 1fr; }
+  .exp-item, .edu-item { grid-template-columns: 1fr; gap: 0.25rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+  .ticker { animation-play-state: paused; }
+}
+  </style>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('dark') === 'true') {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-brand">François Duquesne</span>
+      <div style="display:flex;align-items:center;gap:2rem;">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#personal">Beyond</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-dark-toggle" id="nav-dark-btn" aria-label="Toggle dark mode">
+          <span class="nav-dark-icon"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="hero-label">Software Engineer · Belgium / Remote</p>
+          <h1>Interfaces for complex data and demanding users.</h1>
+          <p class="hero-intro">
+            I build product-grade frontends for signal intelligence platforms, satellite operations tools, and scientific workflows — where the data is dense and the stakes are real.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn btn-outline" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <figure class="hero-photo">
+          <img src="photo.png" alt="Portrait of François Duquesne" loading="eager" />
+        </figure>
+      </div>
+      <div class="ticker-wrap">
+        <div class="ticker" id="ticker"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+      <h2>About</h2>
+      <div class="about-grid">
+        <div>
+          <p>I'm a software engineer with a background in scientific research, now focused on building product-grade interfaces for technical domains.</p>
+          <p style="margin-top:1rem">My work sits at the intersection of complex data and operational decision-making — from signal intelligence and satellite operations to hydrodynamic modeling and developer tooling.</p>
+        </div>
+        <div>
+          <p>I care about making technically dense information usable: clear under complexity, reliable under pressure, and honest about what the data actually says.</p>
+          <p style="margin-top:1rem">Currently at Aerospacelab, building intelligence and Earth observation products. Open to new full-time opportunities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="reveal">
+      <h2>Experience</h2>
+      <div class="exp-list" id="exp-list"></div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="reveal">
+      <h2>Education</h2>
+      <div class="edu-list" id="edu-list"></div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal">
+      <h2>Selected Projects</h2>
+      <div class="projects-grid" id="projects-list"></div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="reveal">
+      <h2>Skills &amp; Stack</h2>
+      <div class="skills-grid" id="skills-grid"></div>
+    </section>
+
+    <!-- PERSONAL -->
+    <section id="personal" class="reveal">
+      <h2>Beyond the Screen</h2>
+      <div id="personal-content"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-rows" id="contact-rows"></div>
+        <div class="availability-box">
+          <div>
+            <span class="availability-dot"></span>
+            <span class="availability-status">Available</span>
+          </div>
+          <p class="availability-title">Open to full-time hire</p>
+          <p class="availability-desc">Also available for selective freelance collaborations on the side (indépendant complémentaire). If you're building something technically demanding, feel free to reach out.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">© <span id="year"></span> François Duquesne</p>
+      <div class="footer-links">
+        <a href="https://github.com/francoisduquesne" target="_blank" rel="noreferrer noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/francois-duquesne-aa213499/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+window.siteData = {
+  experience: [
+    {
+      period: "Sep 2022 — Present",
+      role: "Software Engineer",
+      company: "Aerospacelab",
+      companyUrl: "https://www.aerospacelab.be",
+      details: "Building product-grade interfaces for intelligence analysis and satellite operations.",
+      bullets: [
+        "Led frontend of a SIGINT platform — interactive maps and tabular views for signal intelligence.",
+        "Built satellite operations platform for telemetry monitoring, telecommand management, and configuration.",
+        "Contributed to frontend architecture across multiple intelligence and Earth observation products.",
+      ],
+    },
+    {
+      period: "2019 — Jul 2022",
+      role: "Full-Stack Developer",
+      company: "SEALAB",
+      companyUrl: "https://sealab.be/",
+      details: "Built and maintained a scientific web platform for hydrodynamic modeling workflows.",
+      bullets: [
+        "Developed full-stack features from data ingestion and backend APIs to user-facing UI.",
+        "Improved usability of modeling and simulation workflows for scientific users.",
+      ],
+    },
+    {
+      period: "2019",
+      role: "Research Support",
+      company: "UCLouvain, Earth and Life Institute",
+      companyUrl: "https://uclouvain.be",
+      details: "Extended thesis research; contributed to hydrodynamic model quality.",
+      bullets: [],
+    },
+  ],
+
+  education: [
+    {
+      period: "2014 — 2019",
+      degree: "Master's in Bioengineering",
+      school: "UCLouvain — Université catholique de Louvain",
+      note: "Option: Analyse et gestion de l'information — environmental modelling and data systems.",
+    },
+  ],
+
+  projects: [
+    {
+      title: "SIGINT Intelligence Platform",
+      meta: "Frontend engineer · Aerospacelab",
+      description:
+        "Signal intelligence platform for processing and visualizing signal data and derived intelligence. Interactive maps for geographic signal distribution alongside structured tabular views for analysis and classification workflows.",
+      tags: ["TypeScript", "Vue 3", "Nuxt 4", "Nuxt UI 4", "Geospatial", "Mapping", "Data Visualization"],
+      link: null,
+    },
+    {
+      title: "Satellite Operations Platform",
+      meta: "Frontend engineer · Aerospacelab",
+      description:
+        "Ground segment tool for monitoring, configuring, and communicating with satellites. Real-time telemetry dashboards, telecommand management, satellite health tracking, and pass scheduling.",
+      tags: [
+        "TypeScript", "Vue 3", "Nuxt 4", "Nuxt UI 4", "Real-time data", "REST APIs", "Dashboards",
+        { name: "Java / Quarkus", note: "learning" },
+      ],
+      link: null,
+    },
+    {
+      title: "Hydrodynamic Modeling Platform",
+      meta: "Full-stack developer · SEALAB",
+      description:
+        "Full-stack scientific platform for hydrodynamic simulation workflows — from data ingestion and model configuration through to result visualization for engineering and scientific users.",
+      tags: ["Python", "Django", "PostgreSQL", "JavaScript", "REST APIs"],
+      link: null,
+    },
+    {
+      title: "DevBoard",
+      meta: "Personal project",
+      description:
+        "Real-time developer dashboard for GitLab and GitHub. Visualizes MRs, issues, and todos as an interactive dependency graph with Ctrl+K fuzzy search, local worktree tracking, and persistent annotations.",
+      tags: ["Nuxt 4", "Vue 3", "Nuxt UI 4", "TypeScript", "Vue Flow"],
+      link: { label: "GitHub", url: "https://github.com/FrancoisDuquesne/devboard" },
+    },
+  ],
+
+  skills: [
+    {
+      category: "Frontend",
+      items: [
+        "TypeScript", "JavaScript",
+        { name: "React", note: "· learning" },
+        "Vue 3", "Nuxt", "HTML / CSS", "Tailwind CSS", "Accessibility",
+      ],
+    },
+    {
+      category: "Backend / APIs",
+      items: ["Python", "Django", "REST APIs", "SQL", "PostgreSQL", "Node.js"],
+    },
+    {
+      category: "Data & Viz",
+      items: ["D3.js", "Vue Flow", "Dashboards", "Geospatial / Maps", "Signal data"],
+    },
+    {
+      category: "Tools",
+      items: ["Git", "Docker", "GitLab CI/CD", "Vitest", "Playwright", "Bash"],
+    },
+  ],
+
+  personal: {
+    bio: "I'm drawn to anything that involves movement and the outdoors — paragliding, kitesurfing, motorcycle rides. I play basketball and padel, enjoy beers with colleagues, and try to travel as much as I can. I like meeting new people and seeing new places.",
+    interests: ["Golden retriever", "Paragliding", "Kitesurfing", "Motorcycle", "Basketball", "Padel", "Travel", "Good beer"],
+    softSkills: ["Team player", "Clear communicator", "Autonomous", "Curious", "Adaptable", "Detail-oriented"],
+    languages: [
+      { name: "French", level: "Native" },
+      { name: "English", level: "Fluent" },
+      { name: "Spanish", level: "Fluent" },
+    ],
+  },
+
+  contacts: [
+    { label: "Email",    value: "francoisduq@gmail.com",                         href: "mailto:francoisduq@gmail.com" },
+    { label: "GitHub",   value: "github.com/francoisduquesne",                   href: "https://github.com/francoisduquesne" },
+    { label: "LinkedIn", value: "linkedin.com/in/francois-duquesne-aa213499",    href: "https://www.linkedin.com/in/francois-duquesne-aa213499/" },
+  ],
+};
+  </script>
+
+  <script>
+(function () {
+  const d = window.siteData;
+  if (!d) return;
+
+  function el(tag, cls, html) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html) e.innerHTML = html;
+    return e;
+  }
+
+  function externalLink(url, label) {
+    return `<a href="${url}" target="_blank" rel="noreferrer noopener">${label}</a>`;
+  }
+
+  // ── Personal ──────────────────────────────────────────────────────────────
+  const personalEl = document.getElementById("personal-content");
+  if (personalEl && d.personal) {
+    const p = d.personal;
+    const interestTags = p.interests.map(i => `<span class="skill-item">${i}</span>`).join("");
+    const softTags = p.softSkills.map(i => `<span class="skill-item">${i}</span>`).join("");
+    const langRows = p.languages.map(l =>
+      `<div class="lang-item" style="display:flex;flex-direction:column;gap:0.25rem">
+        <span style="font-size:1rem;font-weight:500;color:var(--text)">${l.name}</span>
+        <span style="font-size:0.78rem;font-family:var(--mono);color:var(--subtle)">${l.level}</span>
+      </div>`
+    ).join("");
+    personalEl.innerHTML = `
+      <p style="max-width:60ch;margin-bottom:2rem">${p.bio}</p>
+      <div class="personal-grid">
+        <div>
+          <div class="skill-group-label">Soft skills</div>
+          <div class="skill-items">${softTags}</div>
+        </div>
+        <div>
+          <div class="skill-group-label">Languages</div>
+          <div style="display:flex;gap:2.5rem;flex-wrap:wrap">${langRows}</div>
+        </div>
+        <div>
+          <div class="skill-group-label">Interests</div>
+          <div class="skill-items">${interestTags}</div>
+        </div>
+      </div>
+    `;
+  }
+
+  // ── Ticker ────────────────────────────────────────────────────────────────
+  const allTech = [...new Set(d.skills.flatMap(g => g.items).map(i => typeof i === "string" ? i : i.name))];
+  const tickerEl = document.getElementById("ticker");
+  if (tickerEl) {
+    [...allTech, ...allTech].forEach(t => {
+      const s = el("span", "ticker-item");
+      s.textContent = t;
+      tickerEl.appendChild(s);
+    });
+  }
+
+  // ── Experience ────────────────────────────────────────────────────────────
+  const expList = document.getElementById("exp-list");
+  if (expList) {
+    d.experience.forEach(job => {
+      const companyHtml = job.companyUrl
+        ? externalLink(job.companyUrl, job.company)
+        : job.company;
+      const bullets = job.bullets.length
+        ? `<ul class="exp-bullets">${job.bullets.map(b => `<li>${b}</li>`).join("")}</ul>`
+        : "";
+      expList.appendChild(el("div", "exp-item", `
+        <div class="exp-year">${job.period}</div>
+        <div>
+          <div class="exp-role">${job.role}</div>
+          <div class="exp-company">${companyHtml}</div>
+          <p class="exp-details">${job.details}</p>
+          ${bullets}
+        </div>
+      `));
+    });
+  }
+
+  // ── Education ─────────────────────────────────────────────────────────────
+  const eduList = document.getElementById("edu-list");
+  if (eduList) {
+    d.education.forEach(edu => {
+      eduList.appendChild(el("div", "edu-item", `
+        <div class="edu-year">${edu.period}</div>
+        <div>
+          <div class="edu-degree">${edu.degree}</div>
+          <div class="edu-school">${edu.school}</div>
+          ${edu.note ? `<p class="edu-note">${edu.note}</p>` : ""}
+        </div>
+      `));
+    });
+  }
+
+  // ── Projects ──────────────────────────────────────────────────────────────
+  const projList = document.getElementById("projects-list");
+  if (projList) {
+    d.projects.forEach(proj => {
+      const tags = proj.tags.map(t => {
+        const name = typeof t === "string" ? t : t.name;
+        const note = typeof t === "object" && t.note ? `<span class="skill-note">${t.note}</span>` : "";
+        return `<span class="project-tag">${name}${note}</span>`;
+      }).join("");
+      const linkHtml = proj.link
+        ? `<a class="project-link" href="${proj.link.url}" target="_blank" rel="noreferrer noopener">${proj.link.label} ↗</a>`
+        : "";
+      projList.appendChild(el("div", "project-card", `
+        <div class="project-card-title">${proj.title}</div>
+        <div class="project-card-meta">${proj.meta}</div>
+        <p class="project-card-desc">${proj.description}</p>
+        <div class="project-card-footer">
+          <div class="project-card-tags">${tags}</div>
+          ${linkHtml}
+        </div>
+      `));
+    });
+  }
+
+  // ── Skills ────────────────────────────────────────────────────────────────
+  const skillsGrid = document.getElementById("skills-grid");
+  if (skillsGrid) {
+    d.skills.forEach(group => {
+      const items = group.items.map(i => {
+        const name = typeof i === "string" ? i : i.name;
+        const note = typeof i === "object" && i.note ? `<span class="skill-note">${i.note}</span>` : "";
+        return `<span class="skill-item">${name}${note}</span>`;
+      }).join("");
+      skillsGrid.appendChild(el("div", null, `
+        <div class="skill-group-label">${group.category}</div>
+        <div class="skill-items">${items}</div>
+      `));
+    });
+  }
+
+  // ── Contact ───────────────────────────────────────────────────────────────
+  const contactRows = document.getElementById("contact-rows");
+  if (contactRows) {
+    d.contacts.forEach(c => {
+      const isExternal = c.href.startsWith("http");
+      contactRows.appendChild(el("div", "contact-row", `
+        <span class="contact-label">${c.label}</span>
+        <a class="contact-link" href="${c.href}"${isExternal ? ' target="_blank" rel="noreferrer noopener"' : ""}>${c.value}</a>
+      `));
+    });
+  }
+
+  // ── Year ──────────────────────────────────────────────────────────────────
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // ── Reveal on scroll ──────────────────────────────────────────────────────
+  const revealObs = new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); revealObs.unobserve(e.target); }
+    }),
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll(".reveal").forEach(el => revealObs.observe(el));
+
+  // ── Nav scroll pill ───────────────────────────────────────────────────────
+  const nav = document.querySelector(".nav");
+  window.addEventListener("scroll", () => {
+    nav.classList.toggle("scrolled", window.scrollY > 40);
+  }, { passive: true });
+
+  // ── Dark mode toggle ──────────────────────────────────────────────────────
+  function applyDark(on) {
+    document.documentElement.classList.toggle("dark", on);
+    try { localStorage.setItem("dark", on ? "true" : "false"); } catch (e) {}
+  }
+
+  document.getElementById("nav-dark-btn").addEventListener("click", () => {
+    applyDark(!document.documentElement.classList.contains("dark"));
+  });
+})();
+  </script>
+
+</body>
+</html>
