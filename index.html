@@ -362,8 +362,8 @@ footer { border-top: 1px solid var(--border); padding: 2rem 0; }
   .hero { padding: 3rem 0 2.5rem; }
 
   .hero-inner { grid-template-columns: 1fr; gap: 1.5rem; }
-  .hero-photo { order: -1; justify-content: flex-start; }
-  .hero-photo img { width: min(150px, 40vw); border-radius: 14px; }
+  .hero-photo { order: -1; justify-content: center; }
+  .hero-photo img { width: 100%; height: auto; aspect-ratio: auto; border-radius: 14px; }
 
   .about-grid, .contact-grid, .personal-grid { grid-template-columns: 1fr; }
   .exp-item, .edu-item { grid-template-columns: 1fr; gap: 0.25rem; }
@@ -372,7 +372,19 @@ footer { border-top: 1px solid var(--border); padding: 2rem 0; }
 
   .footer-inner { flex-wrap: wrap; gap: 0.75rem; }
   .ticker-wrap { margin-top: 2rem; }
+
+  /* nav pill needs explicit side margins on mobile (auto doesn't create them when at full width) */
+  .nav.scrolled .nav-inner { margin-left: 0.75rem; margin-right: 0.75rem; }
+
+  /* mountains take up less vertical space on narrow screens */
+  .mountains-bg { height: 38vh; }
+
+  /* full-width toggle buttons for easier tapping */
+  .exp-toggle { width: 100%; justify-content: space-between; padding: 1.1rem 0; }
 }
+
+/* faster tap response — no 300 ms delay */
+button, a { touch-action: manipulation; }
 
 /* ── MOUNTAINS ── */
 .mountains-bg {
@@ -488,7 +500,10 @@ footer { border-top: 1px solid var(--border); padding: 2rem 0; }
           </div>
         </div>
         <figure class="hero-photo">
-          <img src="photo.png" alt="Portrait of François Duquesne" loading="eager" />
+          <picture>
+            <source media="(max-width: 700px)" srcset="photo-cropped.png" />
+            <img src="photo.png" alt="Portrait of François Duquesne" loading="eager" />
+          </picture>
         </figure>
       </div>
       <div class="ticker-wrap">
