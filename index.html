@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; background: var(--bg); }
 
 :root {
   --bg: #fafaf9;
@@ -39,8 +39,8 @@ html.dark {
   --bg: #0f0f11;
   --surface: #18181b;
   --text: #fafafa;
-  --muted: #a1a1aa;
-  --subtle: #52525b;
+  --muted: #c4c4cc;
+  --subtle: #71717a;
   --border: #27272a;
   --accent: #60a5fa;
   --accent-hover: #93c5fd;
@@ -52,6 +52,12 @@ html.dark .btn-outline { background: var(--surface); border-color: var(--border)
 html.dark .btn-outline:hover { border-color: var(--text); }
 html.dark .project-card:hover { background: #1c1c1f; }
 html.dark .hero-photo img { filter: grayscale(15%) brightness(0.92); }
+html.dark .project-tag,
+html.dark .skill-item,
+html.dark .ticker-item { border-color: #3f3f46; }
+html.dark .skill-item,
+html.dark .ticker-item { background: #27272a; }
+html.dark .project-tag { color: #a1a1aa; }
 
 /* ── DARK TOGGLE ── */
 .nav-dark-toggle {
@@ -81,7 +87,6 @@ html.dark .nav-dark-icon {
 
 body {
   font-family: "DM Sans", system-ui, sans-serif;
-  background: var(--bg);
   color: var(--text);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -139,8 +144,10 @@ html.dark .nav.scrolled .nav-inner {
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
 }
 
-.nav-brand { font-weight: 500; font-size: 0.9rem; color: var(--text); }
+.nav-brand { font-weight: 500; font-size: 0.9rem; color: var(--text); white-space: nowrap; }
 .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+.nav.scrolled .nav-brand { padding-right: 0.75rem; }
+.nav.scrolled .nav-links { gap: 1.1rem; }
 .nav-links a { font-size: 0.85rem; color: var(--muted); transition: color 0.15s; }
 .nav-links a:hover { color: var(--text); }
 
@@ -219,8 +226,7 @@ strong { color: var(--text); font-weight: 500; }
   display: grid; grid-template-columns: 140px 1fr;
   gap: 1.5rem; padding: 1.75rem 0;
 }
-.exp-item:first-child, .edu-item:first-child { border-top: 1px solid var(--border); }
-.exp-item:not(:last-child), .edu-item:not(:last-child) { border-bottom: 1px solid var(--border); }
+.exp-item, .edu-item { border-top: 1px solid var(--border); }
 
 .exp-year, .edu-year { font-size: 0.78rem; font-family: var(--mono); color: var(--subtle); padding-top: 0.2rem; }
 .exp-role, .edu-degree { font-size: 1rem; font-weight: 500; color: var(--text); }
@@ -231,6 +237,17 @@ strong { color: var(--text); font-weight: 500; }
 .exp-details, .edu-note { margin-top: 0.6rem; font-size: 0.9rem; color: var(--muted); }
 .exp-bullets { margin-top: 0.75rem; padding-left: 1rem; display: grid; gap: 0.25rem; }
 .exp-bullets li { font-size: 0.85rem; color: var(--subtle); }
+
+/* ── EARLY EXPERIENCE TOGGLE ── */
+.exp-toggle {
+  background: none; border: none; cursor: pointer;
+  font-size: 0.82rem; color: var(--subtle); font-family: inherit;
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 1rem 0; transition: color 0.15s;
+}
+.exp-toggle:hover { color: var(--text); }
+.exp-toggle svg { transition: transform 0.2s; flex-shrink: 0; }
+.exp-toggle.open svg { transform: rotate(180deg); }
 
 /* ── PROJECTS GRID ── */
 .projects-grid {
@@ -341,19 +358,38 @@ footer { border-top: 1px solid var(--border); padding: 2rem 0; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 700px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-photo { order: -1; }
-  .hero-photo img { width: 90px; }
+  section { padding: 3rem 0; }
+  .hero { padding: 3rem 0 2.5rem; }
+
+  .hero-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero-photo { order: -1; justify-content: flex-start; }
+  .hero-photo img { width: min(150px, 40vw); border-radius: 14px; }
+
   .about-grid, .contact-grid, .personal-grid { grid-template-columns: 1fr; }
   .exp-item, .edu-item { grid-template-columns: 1fr; gap: 0.25rem; }
   .projects-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
+
+  .footer-inner { flex-wrap: wrap; gap: 0.75rem; }
+  .ticker-wrap { margin-top: 2rem; }
 }
+
+/* ── MOUNTAINS ── */
+.mountains-bg {
+  position: fixed;
+  bottom: 0; left: 0;
+  width: 100%; height: 55vh;
+  z-index: -1;
+  pointer-events: none;
+}
+.mountains-bg svg { width: 100%; height: 100%; }
+#mtn-far, #mtn-mid, #mtn-near { will-change: transform; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; filter: none; transition: none; }
   .ticker { animation-play-state: paused; }
+  #mtn-far, #mtn-mid, #mtn-near { will-change: auto; }
 }
   </style>
   <script>
@@ -368,6 +404,53 @@ footer { border-top: 1px solid var(--border); padding: 2rem 0; }
 </head>
 <body>
 
+  <div class="mountains-bg" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMax slice" overflow="visible">
+      <defs>
+        <linearGradient id="grad-far" x1="0" y1="150" x2="0" y2="502" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="currentColor" stop-opacity="0.07"/>
+          <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="grad-mid" x1="0" y1="300" x2="0" y2="502" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="currentColor" stop-opacity="0.09"/>
+          <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="grad-near" x1="0" y1="400" x2="0" y2="502" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="currentColor" stop-opacity="0.11"/>
+          <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+
+      <!-- far range — no occlusion fill, fully transparent behind -->
+      <g id="mtn-far">
+        <path fill="url(#grad-far)" stroke="none"
+              d="M -10,440 L 100,318 L 162,278 L 252,354 L 342,242 L 442,298 L 558,194 L 700,158 L 802,228 L 932,178 L 1042,254 L 1152,198 L 1262,246 L 1382,208 L 1450,238 L 1450,502 L -10,502 Z"/>
+        <path fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" opacity="0.045"
+              d="M -10,440 L 100,318 L 162,278 L 252,354 L 342,242 L 442,298 L 558,194 L 700,158 L 802,228 L 932,178 L 1042,254 L 1152,198 L 1262,246 L 1382,208 L 1450,238"/>
+      </g>
+
+      <!-- mid range — bg fill masks the far layer behind it -->
+      <g id="mtn-mid">
+        <path fill="var(--bg)" fill-opacity="0.75" stroke="none"
+              d="M -10,460 L 82,394 L 182,418 L 302,354 L 422,389 L 542,328 L 662,364 L 782,308 L 902,349 L 1022,311 L 1142,346 L 1262,316 L 1382,339 L 1450,329 L 1450,502 L -10,502 Z"/>
+        <path fill="url(#grad-mid)" stroke="none"
+              d="M -10,460 L 82,394 L 182,418 L 302,354 L 422,389 L 542,328 L 662,364 L 782,308 L 902,349 L 1022,311 L 1142,346 L 1262,316 L 1382,339 L 1450,329 L 1450,502 L -10,502 Z"/>
+        <path fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" opacity="0.065"
+              d="M -10,460 L 82,394 L 182,418 L 302,354 L 422,389 L 542,328 L 662,364 L 782,308 L 902,349 L 1022,311 L 1142,346 L 1262,316 L 1382,339 L 1450,329"/>
+      </g>
+
+      <!-- near range — bg fill masks both layers behind it -->
+      <g id="mtn-near">
+        <path fill="var(--bg)" fill-opacity="0.88" stroke="none"
+              d="M -10,478 L 82,450 L 182,465 L 302,428 L 422,454 L 562,416 L 682,441 L 822,406 L 942,430 L 1082,408 L 1202,428 L 1332,410 L 1450,421 L 1450,502 L -10,502 Z"/>
+        <path fill="url(#grad-near)" stroke="none"
+              d="M -10,478 L 82,450 L 182,465 L 302,428 L 422,454 L 562,416 L 682,441 L 822,406 L 942,430 L 1082,408 L 1202,428 L 1332,410 L 1450,421 L 1450,502 L -10,502 Z"/>
+        <path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" opacity="0.08"
+              d="M -10,478 L 82,450 L 182,465 L 302,428 L 422,454 L 562,416 L 682,441 L 822,406 L 942,430 L 1082,408 L 1202,428 L 1332,410 L 1450,421"/>
+      </g>
+    </svg>
+  </div>
+
   <nav class="nav">
     <div class="nav-inner">
       <span class="nav-brand">François Duquesne</span>
@@ -376,6 +459,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem 0; }
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#publications">Publications</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#personal">Beyond</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -437,6 +521,12 @@ footer { border-top: 1px solid var(--border); padding: 2rem 0; }
     <section id="education" class="reveal">
       <h2>Education</h2>
       <div class="edu-list" id="edu-list"></div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="reveal">
+      <h2>Publications</h2>
+      <div id="pub-list"></div>
     </section>
 
     <!-- PROJECTS -->
@@ -519,14 +609,56 @@ window.siteData = {
       details: "Extended thesis research; contributed to hydrodynamic model quality.",
       bullets: [],
     },
+    {
+      period: "2017 — 2018",
+      role: "Sales & Events Staff",
+      company: "Gestion du Centre Ville — Ottignies Louvain-la-Neuve",
+      companyUrl: null,
+      details: "Seasonal sales work during Louvain-la-Plage (summer) and the Christmas market (winter).",
+      bullets: [],
+      early: true,
+    },
+    {
+      period: "2016",
+      role: "Operations Intern",
+      company: "Nativeblooms — Ecuador",
+      companyUrl: null,
+      details: "Hands-on experience at one of Ecuador's pioneering rose farms. Exposure to agricultural operations and business management. (1 month)",
+      bullets: [],
+      early: true,
+    },
+    {
+      period: "2012",
+      role: "Co-founder & Volunteer",
+      company: "Yanapaqui — Ecuador",
+      companyUrl: null,
+      details: "Co-created a community development project providing better housing for poor communities in remote regions of Ecuador. (~6 months)",
+      bullets: [],
+      early: true,
+    },
   ],
 
   education: [
     {
-      period: "2014 — 2019",
+      period: "2017 — 2019",
       degree: "Master's in Bioengineering",
       school: "UCLouvain — Université catholique de Louvain",
       note: "Option: Analyse et gestion de l'information — environmental modelling and data systems.",
+    },
+    {
+      period: "2014 — 2017",
+      degree: "Bachelor's in Bioengineering",
+      school: "UCLouvain — Université catholique de Louvain",
+      note: "Louvain-la-Neuve, Belgium.",
+    },
+  ],
+
+  publications: [
+    {
+      title: "A coupled ecohydrodynamic model to predict algal blooms in Lake Titicaca",
+      journal: "Ecological Modelling",
+      date: "January 2021",
+      url: "https://www.sciencedirect.com/science/article/pii/S0304380020304750",
     },
   ],
 
@@ -566,6 +698,46 @@ window.siteData = {
       tags: ["Nuxt 4", "Vue 3", "Nuxt UI 4", "TypeScript", "Vue Flow"],
       link: { label: "GitHub", url: "https://github.com/FrancoisDuquesne/devboard" },
     },
+    {
+      title: "Browser Games",
+      meta: "Personal projects · For fun",
+      description:
+        "I build small browser games in my spare time. Current examples: a space colony life-support simulator and an aquarium simulation. An excuse to explore game loops, real-time state, and interactive rendering.",
+      tags: ["JavaScript", "Vue", "Game dev"],
+      link: { label: "GitHub", url: "https://github.com/FrancoisDuquesne/Life-Support" },
+    },
+    {
+      title: "Lake Titicaca Ecosystem Model",
+      meta: "M.Sc. Thesis · UCLouvain / SLIM team · 2019",
+      description:
+        "Modelled Lake Titicaca's hydrodynamic and ecosystemic system to assess the impact of anthropogenic contaminants on biodiversity. Work published in Ecological Modelling (2021).",
+      tags: ["Python", "Hydrodynamics", "Ecosystem modelling", "Scientific computing"],
+      link: { label: "Paper", url: "https://www.sciencedirect.com/science/article/pii/S0304380020304750" },
+    },
+    {
+      title: "PubMed Search Engine",
+      meta: "Academic project · UCLouvain · 2018",
+      description:
+        "Text mining search engine on PubMed abstracts using LSA and LDA techniques. Deployed as an interactive web app on Shinyapps.io.",
+      tags: ["R", "Shinyapps.io", "Text mining", "LSA / LDA"],
+      link: { label: "GitHub", url: "https://github.com/Option10/Text-Mining-with-R" },
+    },
+    {
+      title: "Licence Plate Reader",
+      meta: "Academic project · UCLouvain · 2018",
+      description:
+        "Licence plate recognition combining deep learning (Keras) and image manipulation for end-to-end text detection.",
+      tags: ["Python", "Keras", "Deep learning", "Computer vision"],
+      link: { label: "GitHub", url: "https://github.com/Option10/Deep-Learning---Plate-recognition" },
+    },
+    {
+      title: "Ebola Outbreak Simulation",
+      meta: "Academic project · UCLouvain · 2018",
+      description:
+        "Spatial simulation of the 2014 West Africa Ebola epidemic using cellular automata and Monte Carlo methods to model epidemic progression.",
+      tags: ["MatLab", "Cellular automata", "Monte Carlo", "Epidemic modelling"],
+      link: null,
+    },
   ],
 
   skills: [
@@ -589,12 +761,16 @@ window.siteData = {
       category: "Tools",
       items: ["Git", "Docker", "GitLab CI/CD", "Vitest", "Playwright", "Bash"],
     },
+    {
+      category: "Scientific",
+      items: ["R", "MatLab", "GIS (QGis / ArcGis)", "Mathematical modelling", "LaTeX"],
+    },
   ],
 
   personal: {
     bio: "I'm drawn to anything that involves movement and the outdoors — paragliding, kitesurfing, motorcycle rides. I play basketball and padel, enjoy beers with colleagues, and try to travel as much as I can. I like meeting new people and seeing new places.",
-    interests: ["Golden retriever", "Paragliding", "Kitesurfing", "Motorcycle", "Basketball", "Padel", "Travel", "Good beer"],
-    softSkills: ["Team player", "Clear communicator", "Autonomous", "Curious", "Adaptable", "Detail-oriented"],
+    interests: ["Paragliding", "Kitesurfing", "Motorcycle", "Basketball", "Padel", "Travel", "Hikes", "Gaming", "Movies", "Food", "Beer"],
+    softSkills: ["Team player", "Clear communicator", "Autonomous", "Proactive", "Curious", "Adaptable", "Detail-oriented", "Problem-solver"],
     languages: [
       { name: "French", level: "Native" },
       { name: "English", level: "Fluent" },
@@ -657,6 +833,20 @@ window.siteData = {
     `;
   }
 
+  // ── Publications ─────────────────────────────────────────────────────────
+  const pubList = document.getElementById("pub-list");
+  if (pubList && d.publications) {
+    d.publications.forEach(pub => {
+      pubList.appendChild(el("div", "exp-item", `
+        <div class="exp-year">${pub.date}</div>
+        <div>
+          <div class="exp-role"><a href="${pub.url}" target="_blank" rel="noreferrer noopener" style="color:inherit">${pub.title}</a></div>
+          <div class="exp-company">${pub.journal} &nbsp;·&nbsp; <a class="contact-link" href="${pub.url}" target="_blank" rel="noreferrer noopener">View paper ↗</a></div>
+        </div>
+      `));
+    });
+  }
+
   // ── Ticker ────────────────────────────────────────────────────────────────
   const allTech = [...new Set(d.skills.flatMap(g => g.items).map(i => typeof i === "string" ? i : i.name))];
   const tickerEl = document.getElementById("ticker");
@@ -671,6 +861,7 @@ window.siteData = {
   // ── Experience ────────────────────────────────────────────────────────────
   const expList = document.getElementById("exp-list");
   if (expList) {
+    const earlyItems = [];
     d.experience.forEach(job => {
       const companyHtml = job.companyUrl
         ? externalLink(job.companyUrl, job.company)
@@ -678,7 +869,7 @@ window.siteData = {
       const bullets = job.bullets.length
         ? `<ul class="exp-bullets">${job.bullets.map(b => `<li>${b}</li>`).join("")}</ul>`
         : "";
-      expList.appendChild(el("div", "exp-item", `
+      const item = el("div", "exp-item", `
         <div class="exp-year">${job.period}</div>
         <div>
           <div class="exp-role">${job.role}</div>
@@ -686,8 +877,33 @@ window.siteData = {
           <p class="exp-details">${job.details}</p>
           ${bullets}
         </div>
-      `));
+      `);
+      if (job.early) {
+        item.style.display = "none";
+        earlyItems.push(item);
+      }
+      expList.appendChild(item);
     });
+
+    if (earlyItems.length) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "exp-toggle";
+      const labelSpan = document.createElement("span");
+      labelSpan.textContent = "Earlier experience";
+      const iconSpan = document.createElement("span");
+      iconSpan.innerHTML = `<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,4 6,8 10,4"/></svg>`;
+      btn.appendChild(labelSpan);
+      btn.appendChild(iconSpan.firstChild);
+      let open = false;
+      btn.addEventListener("click", () => {
+        open = !open;
+        earlyItems.forEach(i => { i.style.display = open ? "" : "none"; });
+        btn.classList.toggle("open", open);
+        labelSpan.textContent = open ? "Hide experience" : "Earlier experience";
+      });
+      expList.appendChild(btn);
+    }
   }
 
   // ── Education ─────────────────────────────────────────────────────────────
@@ -708,7 +924,8 @@ window.siteData = {
   // ── Projects ──────────────────────────────────────────────────────────────
   const projList = document.getElementById("projects-list");
   if (projList) {
-    d.projects.forEach(proj => {
+    const extraCards = [];
+    d.projects.forEach((proj, idx) => {
       const tags = proj.tags.map(t => {
         const name = typeof t === "string" ? t : t.name;
         const note = typeof t === "object" && t.note ? `<span class="skill-note">${t.note}</span>` : "";
@@ -717,7 +934,7 @@ window.siteData = {
       const linkHtml = proj.link
         ? `<a class="project-link" href="${proj.link.url}" target="_blank" rel="noreferrer noopener">${proj.link.label} ↗</a>`
         : "";
-      projList.appendChild(el("div", "project-card", `
+      const card = el("div", "project-card", `
         <div class="project-card-title">${proj.title}</div>
         <div class="project-card-meta">${proj.meta}</div>
         <p class="project-card-desc">${proj.description}</p>
@@ -725,8 +942,33 @@ window.siteData = {
           <div class="project-card-tags">${tags}</div>
           ${linkHtml}
         </div>
-      `));
+      `);
+      if (idx >= 6) {
+        card.style.display = "none";
+        extraCards.push(card);
+      }
+      projList.appendChild(card);
     });
+
+    if (extraCards.length) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "exp-toggle";
+      const labelSpan = document.createElement("span");
+      labelSpan.textContent = "Earlier projects";
+      const iconSpan = document.createElement("span");
+      iconSpan.innerHTML = `<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,4 6,8 10,4"/></svg>`;
+      btn.appendChild(labelSpan);
+      btn.appendChild(iconSpan.firstChild);
+      let open = false;
+      btn.addEventListener("click", () => {
+        open = !open;
+        extraCards.forEach(c => { c.style.display = open ? "" : "none"; });
+        btn.classList.toggle("open", open);
+        labelSpan.textContent = open ? "Hide earlier projects" : "Earlier projects";
+      });
+      projList.insertAdjacentElement("afterend", btn);
+    }
   }
 
   // ── Skills ────────────────────────────────────────────────────────────────
@@ -770,10 +1012,22 @@ window.siteData = {
   );
   document.querySelectorAll(".reveal").forEach(el => revealObs.observe(el));
 
-  // ── Nav scroll pill ───────────────────────────────────────────────────────
+  // ── Nav scroll pill + mountain parallax ──────────────────────────────────
   const nav = document.querySelector(".nav");
+  const mtnFar  = document.getElementById("mtn-far");
+  const mtnMid  = document.getElementById("mtn-mid");
+  const mtnNear = document.getElementById("mtn-near");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   window.addEventListener("scroll", () => {
     nav.classList.toggle("scrolled", window.scrollY > 40);
+    if (!reducedMotion) {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const p = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+      if (mtnFar)  mtnFar.style.transform  = `translateY(${p * -20}px)`;
+      if (mtnMid)  mtnMid.style.transform  = `translateY(${p * -42}px)`;
+      if (mtnNear) mtnNear.style.transform = `translateY(${p * -65}px)`;
+    }
   }, { passive: true });
 
   // ── Dark mode toggle ──────────────────────────────────────────────────────
