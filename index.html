@@ -232,7 +232,7 @@ strong { color: var(--text); font-weight: 500; }
 .exp-item, .edu-item { border-top: 1px solid var(--border); }
 
 .exp-year, .edu-year { font-size: 0.78rem; font-family: var(--mono); color: var(--subtle); padding-top: 0.2rem; }
-.exp-role, .edu-degree { font-size: 1rem; font-weight: 500; color: var(--text); }
+.exp-role, .edu-degree { font-size: 1rem; font-weight: 600; color: var(--text); }
 .exp-company { font-size: 0.88rem; color: var(--muted); margin-top: 0.1rem; }
 .exp-company a { color: var(--accent); }
 .exp-company a:hover { text-decoration: underline; }
@@ -531,7 +531,7 @@ button, a { touch-action: manipulation; }
         </div>
         <div>
           <p>I care about making technically dense information usable: clear under complexity, reliable under pressure, and honest about what the data actually says.</p>
-          <p style="margin-top:1rem">Currently at Aerospacelab, building intelligence and Earth observation products. Open to new full-time opportunities.</p>
+          <p style="margin-top:1rem">Currently at Aerospacelab, building intelligence and Earth observation products. Open to new full-time opportunities — also available for selective freelance engagements.</p>
         </div>
       </div>
     </section>
@@ -632,6 +632,7 @@ button, a { touch-action: manipulation; }
     ).join("");
     personalEl.innerHTML = `
       <p style="max-width:60ch;margin-bottom:2rem">${p.bio}</p>
+      ${p.workStyle ? `<div style="max-width:60ch;margin-bottom:2rem"><div class="skill-group-label" style="margin-bottom:0.5rem">Working style</div><p>${p.workStyle}</p></div>` : ""}
       <div class="personal-grid">
         <div>
           <div class="skill-group-label">Soft skills</div>

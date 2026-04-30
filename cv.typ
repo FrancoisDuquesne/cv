@@ -90,6 +90,7 @@
   decision-making — from signal intelligence and satellite operations to hydrodynamic modelling
   and developer tooling. I care about making technically dense information usable: clear under
   complexity, reliable under pressure, and honest about what the data says.
+  Currently at Aerospacelab. Open to full-time opportunities and selective freelance engagements.
 ]
 
 // ── Experience ──────────────────────────────────────────────────────────────
@@ -102,8 +103,8 @@
   "Aerospacelab",
   note: "Building product-grade interfaces for intelligence analysis and satellite operations.",
   bullets: (
-    "Led frontend of a SIGINT platform — interactive maps and tabular views for signal intelligence.",
-    "Built satellite operations platform for telemetry monitoring, telecommand management, and configuration.",
+    "Led frontend of a SIGINT platform serving internal analysts and undisclosed external clients — geospatial maps and tabular views for signal classification and intelligence workflows.",
+    "Built satellite operations platform used by all satellite operators — real-time telemetry, telecommand management, health tracking, and pass scheduling.",
     "Contributed to frontend architecture across multiple intelligence and Earth observation products.",
   )
 )
@@ -112,10 +113,11 @@
   "2019 — Jul 2022",
   "Full-Stack Developer",
   "SEALAB",
-  note: "Built and maintained a scientific web platform for hydrodynamic modelling workflows.",
+  note: "Part of the founding team of this UCLouvain spin-off. Designed system architecture, drove key technical decisions, and implemented the DevOps pipeline.",
   bullets: (
+    "Designed system architecture and led technical decisions as a founding team member.",
+    "Implemented CI/CD pipeline and deployment infrastructure from scratch.",
     "Developed full-stack features from data ingestion and backend APIs to user-facing UI.",
-    "Improved usability of modelling and simulation workflows for scientific users.",
   )
 )
 

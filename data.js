@@ -7,8 +7,8 @@ window.siteData = {
       companyUrl: "https://www.aerospacelab.be",
       details: "Building product-grade interfaces for intelligence analysis and satellite operations.",
       bullets: [
-        "Led frontend of a SIGINT platform — interactive maps and tabular views for signal intelligence.",
-        "Built satellite operations platform for telemetry monitoring, telecommand management, and configuration.",
+        "Led frontend of a SIGINT platform serving internal analysts and undisclosed external clients — interactive geospatial maps and structured tabular views for signal classification and intelligence workflows.",
+        "Built satellite operations platform used by all satellite operators at Aerospacelab — real-time telemetry dashboards, telecommand management, health tracking, and pass scheduling.",
         "Contributed to frontend architecture across multiple intelligence and Earth observation products.",
       ],
     },
@@ -17,10 +17,12 @@ window.siteData = {
       role: "Full-Stack Developer",
       company: "SEALAB",
       companyUrl: "https://sealab.be/",
-      details: "Built and maintained a scientific web platform for hydrodynamic modeling workflows.",
+      details: "Part of the founding team of this UCLouvain spin-off. Designed the system architecture, drove key technical decisions, and implemented the DevOps pipeline — while building a full-stack scientific platform for hydrodynamic modelling.",
       bullets: [
+        "Designed system architecture and led technical decisions as a founding team member.",
+        "Implemented CI/CD pipeline and deployment infrastructure from scratch.",
         "Developed full-stack features from data ingestion and backend APIs to user-facing UI.",
-        "Improved usability of modeling and simulation workflows for scientific users.",
+        "Improved usability of modelling and simulation workflows for engineering and scientific users.",
       ],
     },
     {
@@ -89,7 +91,7 @@ window.siteData = {
       title: "SIGINT Intelligence Platform",
       meta: "Frontend engineer · Aerospacelab",
       description:
-        "Signal intelligence platform for processing and visualizing signal data and derived intelligence. Interactive maps for geographic signal distribution alongside structured tabular views for analysis and classification workflows.",
+        "Frontend of a signal intelligence platform used by internal analysts and undisclosed external clients. Interactive geospatial maps display signal distribution in real time; structured tabular views support classification and analysis workflows — cutting through signal noise to surface actionable intelligence.",
       tags: ["TypeScript", "Vue 3", "Nuxt 4", "Nuxt UI 4", "Geospatial", "Mapping", "Data Visualization"],
       link: null,
     },
@@ -97,7 +99,7 @@ window.siteData = {
       title: "Satellite Operations Platform",
       meta: "Frontend engineer · Aerospacelab",
       description:
-        "Ground segment tool for monitoring, configuring, and communicating with satellites. Real-time telemetry dashboards, telecommand management, satellite health tracking, and pass scheduling.",
+        "Ground segment tool used by all satellite operators at Aerospacelab. Provides real-time telemetry dashboards, telecommand management, and pass scheduling — centralising every operator's daily workflow into a single, reliable interface.",
       tags: [
         "TypeScript", "Vue 3", "Nuxt 4", "Nuxt UI 4", "Real-time data", "REST APIs", "Dashboards",
         { name: "Java / Quarkus", note: "learning" },
@@ -108,7 +110,7 @@ window.siteData = {
       title: "Hydrodynamic Modeling Platform",
       meta: "Full-stack developer · SEALAB",
       description:
-        "Full-stack scientific platform for hydrodynamic simulation workflows — from data ingestion and model configuration through to result visualization for engineering and scientific users.",
+        "Full-stack scientific platform that replaced fragmented manual workflows with an end-to-end browser-based solution — from data ingestion and model configuration to result visualization. Made complex hydrodynamic simulations accessible to engineers and scientists without specialist tooling.",
       tags: ["Python", "Django", "PostgreSQL", "JavaScript", "REST APIs"],
       link: null,
     },
@@ -116,7 +118,7 @@ window.siteData = {
       title: "DevBoard",
       meta: "Personal project",
       description:
-        "Real-time developer dashboard for GitLab and GitHub. Visualizes MRs, issues, and todos as an interactive dependency graph with Ctrl+K fuzzy search, local worktree tracking, and persistent annotations.",
+        "Personal tool built to eliminate context-switching across GitLab and GitHub. Visualises all open MRs, issues, and todos as an interactive dependency graph — with Ctrl+K search, worktree tracking, and persistent annotations. Replaced scattered tab chaos with a single focused view.",
       tags: ["Nuxt 4", "Vue 3", "Nuxt UI 4", "TypeScript", "Vue Flow"],
       link: { label: "GitHub", url: "https://github.com/FrancoisDuquesne/devboard" },
     },
@@ -132,7 +134,7 @@ window.siteData = {
       title: "Lake Titicaca Ecosystem Model",
       meta: "M.Sc. Thesis · UCLouvain / SLIM team · 2019",
       description:
-        "Modelled Lake Titicaca's hydrodynamic and ecosystemic system to assess the impact of anthropogenic contaminants on biodiversity. Work published in Ecological Modelling (2021).",
+        "M.Sc. thesis modelling Lake Titicaca's ecosystem to assess how pollution affects biodiversity in one of the world's highest-altitude lakes. Resulted in a peer-reviewed publication in Ecological Modelling (2021) — contributing to the scientific basis for environmental protection of the lake.",
       tags: ["Python", "Hydrodynamics", "Ecosystem modelling", "Scientific computing"],
       link: { label: "Paper", url: "https://www.sciencedirect.com/science/article/pii/S0304380020304750" },
     },
@@ -190,9 +192,10 @@ window.siteData = {
   ],
 
   personal: {
-    bio: "I'm drawn to anything that involves movement and the outdoors — paragliding, kitesurfing, motorcycle rides. I play basketball and padel, enjoy beers with colleagues, and try to travel as much as I can. I like meeting new people and seeing new places.",
-    interests: ["Paragliding", "Kitesurfing", "Motorcycle", "Basketball", "Padel", "Travel", "Hikes", "Gaming", "Movies", "Food", "Beer"],
-    softSkills: ["Team player", "Clear communicator", "Autonomous", "Proactive", "Curious", "Adaptable", "Detail-oriented", "Problem-solver"],
+    bio: "I'm drawn to anything that involves movement and the outdoors — paragliding, kitesurfing, motorcycle rides. I play basketball, padel, and salsa. I enjoy beers with colleagues and try to travel as much as I can. I like meeting new people and seeing new places.",
+    workStyle: "I work iteratively — I'd rather ship and learn than overthink and stall. I'm collaborative without ego, direct without being difficult, and results-driven without losing sight of quality. I adapt fast: three different product verticals in three years at Aerospacelab. I work agile — two-week sprints, planning, retros, GitLab milestones and issues — and I'm comfortable making decisions and owning them.",
+    interests: ["Paragliding", "Kitesurfing", "Motorcycle", "Basketball", "Padel", "Salsa dancing", "Travel", "Hikes", "Gaming", "Movies", "Food", "Beer"],
+    softSkills: ["Collaborative", "Low ego", "Feedback-driven", "Business-minded", "Decisive", "Results-driven", "Iterative", "Direct & actionable", "Agile"],
     languages: [
       { name: "Spanish", level: "Native" },
       { name: "French", level: "Native" },
