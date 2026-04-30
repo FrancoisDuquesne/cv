@@ -10,27 +10,27 @@
 
 #set page(
   paper: "a4",
-  margin: (x: 1.8cm, y: 1.4cm),
+  margin: (x: 1.5cm, y: 1.0cm),
 )
 
 #set text(
   font: ("DM Sans", "Noto Sans"),
-  size: 9pt,
+  size: 8.8pt,
   fill: text-color,
 )
 
-#set par(leading: 0.6em, justify: false)
+#set par(leading: 0.55em, justify: false)
 
 #set list(indent: 0pt, marker: "–")
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
 
 #let section(title) = {
-  v(0.85em)
+  v(0.65em)
   text(size: 7pt, weight: 500, tracking: 2pt, fill: subtle)[#upper(title)]
-  v(0.15em)
+  v(0.1em)
   line(length: 100%, stroke: 0.4pt + border-col)
-  v(0.4em)
+  v(0.3em)
 }
 
 #let entry(period, title, subtitle, note: none, bullets: ()) = {
@@ -44,18 +44,18 @@
       text(fill: muted)[#subtitle]
       if note != none {
         linebreak()
-        text(size: 8.5pt, fill: muted)[#note]
+        text(size: 8.3pt, fill: muted)[#note]
       }
       if bullets.len() > 0 {
-        v(0.15em)
+        v(0.1em)
         for b in bullets {
-          text(size: 8.5pt, fill: subtle)[– #b]
+          text(size: 8.3pt, fill: subtle)[– #b]
           linebreak()
         }
       }
     }
   )
-  v(0.45em)
+  v(0.3em)
 }
 
 // ── Header ──────────────────────────────────────────────────────────────────
@@ -77,7 +77,7 @@
   ]
 )
 
-#v(0.45em)
+#v(0.35em)
 #line(length: 100%, stroke: 0.5pt + border-col)
 
 // ── Profile ─────────────────────────────────────────────────────────────────
