@@ -87,7 +87,7 @@
 #text(size: 9pt, fill: muted)[
   Software engineer with a background in scientific research, building product-grade interfaces
   for technical domains. My work sits at the intersection of complex data and operational
-  decision-making — from signal intelligence and satellite operations to hydrodynamic modelling
+  decision-making, from signal intelligence and satellite operations to hydrodynamic modelling
   and developer tooling. I care about making technically dense information usable: clear under
   complexity, reliable under pressure, and honest about what the data says.
   Currently at Aerospacelab. Open to full-time opportunities and selective freelance engagements.
@@ -103,9 +103,9 @@
   "Aerospacelab",
   note: "Belgian new-space company developing its own satellites and intelligence products.",
   bullets: (
-    "Sole frontend engineer on DataFusion — an extensible platform fusing SIGINT, optical, and open-source data into a unified operational interface with real-time monitoring, vessel tracking, and configurable alerting.",
-    "Led frontend of a SIGINT platform serving internal analysts and undisclosed external clients — geospatial maps and tabular views for signal classification and intelligence workflows.",
-    "Built satellite operations platform used by all satellite operators — real-time telemetry, telecommand management, health tracking, and pass scheduling.",
+    "Sole frontend engineer on DataFusion, an extensible platform fusing SIGINT, optical, and open-source data into a unified operational interface with real-time monitoring, vessel tracking, and configurable alerting.",
+    "Led frontend of a SIGINT platform serving internal analysts and undisclosed external clients, delivering geospatial maps and tabular views for signal classification and intelligence workflows.",
+    "Built satellite operations platform used by all satellite operators, providing real-time telemetry, telecommand management, health tracking, and pass scheduling.",
     "Contributed to frontend architecture across multiple intelligence and Earth observation products.",
   )
 )
@@ -137,7 +137,7 @@
   "2017 — 2019",
   "Master's in Bioengineering",
   "UCLouvain",
-  note: "Major in data analysis and management — environmental modelling.",
+  note: "Major in data analysis and management, with a focus on environmental modelling.",
 )
 
 #entry(

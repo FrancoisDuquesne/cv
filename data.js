@@ -7,9 +7,9 @@ window.siteData = {
       companyUrl: "https://www.aerospacelab.be",
       details: "Belgian new-space company developing its own satellites and intelligence products.",
       bullets: [
-        "Sole frontend engineer on DataFusion — an extensible platform fusing SIGINT, optical, and open-source data into a unified operational interface with real-time monitoring, vessel tracking, and configurable alerting.",
-        "Led frontend of a SIGINT platform serving internal analysts and undisclosed external clients — interactive geospatial maps and structured tabular views for signal classification and intelligence workflows.",
-        "Built satellite operations platform used by all satellite operators at Aerospacelab — real-time telemetry dashboards, telecommand management, health tracking, and pass scheduling.",
+        "Sole frontend engineer on DataFusion, an extensible platform fusing SIGINT, optical, and open-source data into a unified operational interface with real-time monitoring, vessel tracking, and configurable alerting.",
+        "Led frontend of a SIGINT platform serving internal analysts and undisclosed external clients. Delivered interactive geospatial maps and structured tabular views for signal classification and intelligence workflows.",
+        "Built satellite operations platform used by all satellite operators at Aerospacelab, covering real-time telemetry dashboards, telecommand management, health tracking, and pass scheduling.",
         "Contributed to frontend architecture across multiple intelligence and Earth observation products.",
       ],
     },
@@ -68,7 +68,7 @@ window.siteData = {
       period: "2017 — 2019",
       degree: "Master's in Bioengineering",
       school: "UCLouvain — Université catholique de Louvain",
-      note: "Major in data analysis and management — environmental modelling.",
+      note: "Major in data analysis and management, with a focus on environmental modelling.",
     },
     {
       period: "2014 — 2017",
@@ -92,7 +92,7 @@ window.siteData = {
       title: "DataFusion",
       meta: "Frontend engineer · Aerospacelab",
       description:
-        "Extensible intelligence platform built around a plug-and-play data model: any source — SIGINT, optical, open-source, or custom feeds — connects and surfaces on a unified operational interface. Analysts can explore live data across sources, monitor maritime activity and ground assets, and configure alerts for events like vessel loitering or illegal fishing. Sole frontend engineer in a cross-functional team of seven — partially government-funded and delivered to a customer.",
+        "Extensible intelligence platform built around a plug-and-play data model: any source (SIGINT, optical, open-source, or custom feeds) connects and surfaces on a unified operational interface. Analysts can explore live data across sources, monitor maritime activity and ground assets, and configure alerts for events like vessel loitering or illegal fishing. Sole frontend engineer in a cross-functional team of seven, partially government-funded and delivered to a customer.",
       tags: ["TypeScript", "Vue 3", "Nuxt 4", "Nuxt UI 4", "Geospatial", "Mapping", "Real-time data", "Alerting", "Data Visualization"],
       link: null,
     },
@@ -100,7 +100,7 @@ window.siteData = {
       title: "SIGINT Intelligence Platform",
       meta: "Frontend engineer · Aerospacelab",
       description:
-        "Frontend of a signal intelligence platform used by internal analysts and undisclosed external clients. Interactive geospatial maps display signal distribution in real time; structured tabular views support classification and analysis workflows — cutting through signal noise to surface actionable intelligence.",
+        "Frontend of a signal intelligence platform used by internal analysts and undisclosed external clients. Interactive geospatial maps display signal distribution in real time; structured tabular views support classification and analysis workflows, cutting through signal noise to surface actionable intelligence.",
       tags: ["TypeScript", "Vue 3", "Nuxt 4", "Nuxt UI 4", "Geospatial", "Mapping", "Data Visualization"],
       link: null,
     },
@@ -108,7 +108,7 @@ window.siteData = {
       title: "Satellite Operations Platform",
       meta: "Frontend engineer · Aerospacelab",
       description:
-        "Ground segment tool used by all satellite operators at Aerospacelab. Provides real-time telemetry dashboards, telecommand management, and pass scheduling — centralising every operator's daily workflow into a single, reliable interface.",
+        "Ground segment tool used by all satellite operators at Aerospacelab. Provides real-time telemetry dashboards, telecommand management, and pass scheduling, centralising every operator's daily workflow into a single, reliable interface.",
       tags: [
         "TypeScript", "Vue 3", "Nuxt 4", "Nuxt UI 4", "Real-time data", "REST APIs", "Dashboards",
         { name: "Java / Quarkus", note: "learning" },
@@ -119,7 +119,7 @@ window.siteData = {
       title: "Hydrodynamic Modeling Platform",
       meta: "Full-stack developer · SEALAB",
       description:
-        "Full-stack scientific platform that replaced fragmented manual workflows with an end-to-end browser-based solution — from data ingestion and model configuration to result visualization. Made complex hydrodynamic simulations accessible to engineers and scientists without specialist tooling.",
+        "Full-stack scientific platform that replaced fragmented manual workflows with an end-to-end browser-based solution, from data ingestion and model configuration to result visualization. Made complex hydrodynamic simulations accessible to engineers and scientists without specialist tooling.",
       tags: ["Python", "Django", "PostgreSQL", "JavaScript", "REST APIs"],
       link: null,
     },
@@ -127,7 +127,7 @@ window.siteData = {
       title: "DevBoard",
       meta: "Personal project",
       description:
-        "Personal tool built to eliminate context-switching across GitLab and GitHub. Visualises all open MRs, issues, and todos as an interactive dependency graph — with Ctrl+K search, worktree tracking, and persistent annotations. Replaced scattered tab chaos with a single focused view.",
+        "Personal tool built to eliminate context-switching across GitLab and GitHub. Visualises all open MRs, issues, and todos as an interactive dependency graph, with Ctrl+K search, worktree tracking, and persistent annotations. Replaced scattered tab chaos with a single focused view.",
       tags: ["Nuxt 4", "Vue 3", "Nuxt UI 4", "TypeScript", "Vue Flow"],
       link: { label: "GitHub", url: "https://github.com/FrancoisDuquesne/devboard" },
     },
@@ -143,7 +143,7 @@ window.siteData = {
       title: "Lake Titicaca Ecosystem Model",
       meta: "M.Sc. Thesis · UCLouvain / SLIM team · 2019",
       description:
-        "M.Sc. thesis modelling Lake Titicaca's ecosystem to assess how pollution affects biodiversity in one of the world's highest-altitude lakes. Resulted in a peer-reviewed publication in Ecological Modelling (2021) — contributing to the scientific basis for environmental protection of the lake.",
+        "M.Sc. thesis modelling Lake Titicaca's ecosystem to assess how pollution affects biodiversity in one of the world's highest-altitude lakes. Resulted in a peer-reviewed publication in Ecological Modelling (2021), contributing to the scientific basis for environmental protection of the lake.",
       tags: ["Python", "Hydrodynamics", "Ecosystem modelling", "Scientific computing"],
       link: { label: "Paper", url: "https://www.sciencedirect.com/science/article/pii/S0304380020304750" },
     },
@@ -201,8 +201,8 @@ window.siteData = {
   ],
 
   personal: {
-    bio: "I'm drawn to anything that involves movement and the outdoors — paragliding, kitesurfing, motorcycle rides. I play basketball, padel, and salsa. I enjoy beers with colleagues and try to travel as much as I can. I like meeting new people and seeing new places.",
-    workStyle: "I work iteratively — I'd rather ship and learn than overthink and stall. I'm collaborative without ego, direct without being difficult, and results-driven without losing sight of quality. I adapt fast: three different product verticals in three years at Aerospacelab. I work agile — two-week sprints, planning, retros, GitLab milestones and issues — and I'm comfortable making decisions and owning them.",
+    bio: "I'm drawn to anything that involves movement and the outdoors: paragliding, kitesurfing, motorcycle rides. I play basketball, padel, and salsa. I enjoy beers with colleagues and try to travel as much as I can. I like meeting new people and seeing new places.",
+    workStyle: "I work iteratively: I'd rather ship and learn than overthink and stall. I'm collaborative without ego, direct without being difficult, and results-driven without losing sight of quality. I adapt fast: three different product verticals in three years at Aerospacelab. I work agile (two-week sprints, planning, retros, GitLab milestones and issues) and I'm comfortable making decisions and owning them.",
     interests: ["Paragliding", "Kitesurfing", "Motorcycle", "Basketball", "Padel", "Salsa dancing", "Travel", "Hikes", "Gaming", "Movies", "Food", "Beer"],
     softSkills: ["Collaborative", "Low ego", "Feedback-driven", "Business-minded", "Decisive", "Results-driven", "Iterative", "Direct & actionable", "Agile"],
     languages: [
