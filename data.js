@@ -5,7 +5,7 @@ window.siteData = {
       role: "Software Engineer",
       company: "Aerospacelab",
       companyUrl: "https://www.aerospacelab.be",
-      details: "Building product-grade interfaces for intelligence analysis and satellite operations.",
+      details: "Belgian new-space company developing its own satellites and intelligence products.",
       bullets: [
         "Led frontend of a SIGINT platform serving internal analysts and undisclosed external clients — interactive geospatial maps and structured tabular views for signal classification and intelligence workflows.",
         "Built satellite operations platform used by all satellite operators at Aerospacelab — real-time telemetry dashboards, telecommand management, health tracking, and pass scheduling.",
@@ -17,7 +17,7 @@ window.siteData = {
       role: "Full-Stack Developer",
       company: "SEALAB",
       companyUrl: "https://sealab.be/",
-      details: "Part of the founding team of this UCLouvain spin-off. Designed the system architecture, drove key technical decisions, and implemented the DevOps pipeline — while building a full-stack scientific platform for hydrodynamic modelling.",
+      details: "UCLouvain spin-off developing scientific software for hydrodynamic modelling. Joined as part of the founding team.",
       bullets: [
         "Designed system architecture and led technical decisions as a founding team member.",
         "Implemented CI/CD pipeline and deployment infrastructure from scratch.",
@@ -30,7 +30,7 @@ window.siteData = {
       role: "Research Support",
       company: "UCLouvain, Earth and Life Institute",
       companyUrl: "https://uclouvain.be",
-      details: "Extended thesis research; contributed to hydrodynamic model quality.",
+      details: "Extended research from my M.Sc. dissertation; contributed to hydrodynamic model quality.",
       bullets: [],
     },
     {
@@ -104,6 +104,14 @@ window.siteData = {
         "TypeScript", "Vue 3", "Nuxt 4", "Nuxt UI 4", "Real-time data", "REST APIs", "Dashboards",
         { name: "Java / Quarkus", note: "learning" },
       ],
+      link: null,
+    },
+    {
+      title: "DataFusion",
+      meta: "Frontend engineer · Aerospacelab",
+      description:
+        "Extensible intelligence platform built around a plug-and-play data model: any source — SIGINT, optical, open-source, or custom feeds — connects and surfaces on a unified operational interface. Analysts can explore live data across sources, monitor maritime activity and ground assets, and configure alerts for events like vessel loitering or illegal fishing. Sole frontend engineer in a cross-functional team of seven — partially government-funded and delivered to a customer.",
+      tags: ["TypeScript", "Vue 3", "Nuxt 4", "Nuxt UI 4", "Geospatial", "Mapping", "Real-time data", "Alerting", "Data Visualization"],
       link: null,
     },
     {
@@ -206,6 +214,6 @@ window.siteData = {
   contacts: [
     { label: "Email",    value: "francoisduq@gmail.com",                         href: "mailto:francoisduq@gmail.com" },
     { label: "GitHub",   value: "github.com/francoisduquesne",                   href: "https://github.com/francoisduquesne" },
-    { label: "LinkedIn", value: "linkedin.com/in/francois-duquesne-aa213499",    href: "https://www.linkedin.com/in/francois-duquesne-aa213499/" },
+    { label: "LinkedIn", value: "linkedin.com/in/francoisduquesne",               href: "https://www.linkedin.com/in/francoisduquesne/" },
   ],
 };
