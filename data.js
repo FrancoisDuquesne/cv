@@ -7,6 +7,7 @@ window.siteData = {
       companyUrl: "https://www.aerospacelab.be",
       details: "Belgian new-space company developing its own satellites and intelligence products.",
       bullets: [
+        "Sole frontend engineer on DataFusion — an extensible platform fusing SIGINT, optical, and open-source data into a unified operational interface with real-time monitoring, vessel tracking, and configurable alerting.",
         "Led frontend of a SIGINT platform serving internal analysts and undisclosed external clients — interactive geospatial maps and structured tabular views for signal classification and intelligence workflows.",
         "Built satellite operations platform used by all satellite operators at Aerospacelab — real-time telemetry dashboards, telecommand management, health tracking, and pass scheduling.",
         "Contributed to frontend architecture across multiple intelligence and Earth observation products.",
@@ -88,6 +89,14 @@ window.siteData = {
 
   projects: [
     {
+      title: "DataFusion",
+      meta: "Frontend engineer · Aerospacelab",
+      description:
+        "Extensible intelligence platform built around a plug-and-play data model: any source — SIGINT, optical, open-source, or custom feeds — connects and surfaces on a unified operational interface. Analysts can explore live data across sources, monitor maritime activity and ground assets, and configure alerts for events like vessel loitering or illegal fishing. Sole frontend engineer in a cross-functional team of seven — partially government-funded and delivered to a customer.",
+      tags: ["TypeScript", "Vue 3", "Nuxt 4", "Nuxt UI 4", "Geospatial", "Mapping", "Real-time data", "Alerting", "Data Visualization"],
+      link: null,
+    },
+    {
       title: "SIGINT Intelligence Platform",
       meta: "Frontend engineer · Aerospacelab",
       description:
@@ -104,14 +113,6 @@ window.siteData = {
         "TypeScript", "Vue 3", "Nuxt 4", "Nuxt UI 4", "Real-time data", "REST APIs", "Dashboards",
         { name: "Java / Quarkus", note: "learning" },
       ],
-      link: null,
-    },
-    {
-      title: "DataFusion",
-      meta: "Frontend engineer · Aerospacelab",
-      description:
-        "Extensible intelligence platform built around a plug-and-play data model: any source — SIGINT, optical, open-source, or custom feeds — connects and surfaces on a unified operational interface. Analysts can explore live data across sources, monitor maritime activity and ground assets, and configure alerts for events like vessel loitering or illegal fishing. Sole frontend engineer in a cross-functional team of seven — partially government-funded and delivered to a customer.",
-      tags: ["TypeScript", "Vue 3", "Nuxt 4", "Nuxt UI 4", "Geospatial", "Mapping", "Real-time data", "Alerting", "Data Visualization"],
       link: null,
     },
     {

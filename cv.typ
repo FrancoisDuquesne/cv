@@ -71,7 +71,7 @@
     #text(size: 8.2pt, fill: muted)[
       francoisduq\@gmail.com \
       #link("https://github.com/francoisduquesne")[github.com/francoisduquesne] \
-      #link("https://www.linkedin.com/in/francois-duquesne-aa213499/")[linkedin.com/in/francoisduquesne] \
+      #link("https://www.linkedin.com/in/francoisduquesne/")[linkedin.com/in/francoisduquesne] \
       #link("https://francoisduquesne.com")[francoisduquesne.com]
     ]
   ]
@@ -101,8 +101,9 @@
   "Sep 2022 — Present",
   "Software Engineer",
   "Aerospacelab",
-  note: "Building product-grade interfaces for intelligence analysis and satellite operations.",
+  note: "Belgian new-space company developing its own satellites and intelligence products.",
   bullets: (
+    "Sole frontend engineer on DataFusion — an extensible platform fusing SIGINT, optical, and open-source data into a unified operational interface with real-time monitoring, vessel tracking, and configurable alerting.",
     "Led frontend of a SIGINT platform serving internal analysts and undisclosed external clients — geospatial maps and tabular views for signal classification and intelligence workflows.",
     "Built satellite operations platform used by all satellite operators — real-time telemetry, telecommand management, health tracking, and pass scheduling.",
     "Contributed to frontend architecture across multiple intelligence and Earth observation products.",
@@ -113,7 +114,7 @@
   "2019 — Jul 2022",
   "Full-Stack Developer",
   "SEALAB",
-  note: "Part of the founding team of this UCLouvain spin-off. Designed system architecture, drove key technical decisions, and implemented the DevOps pipeline.",
+  note: "UCLouvain spin-off developing scientific software for hydrodynamic modelling. Joined as part of the founding team.",
   bullets: (
     "Designed system architecture and led technical decisions as a founding team member.",
     "Implemented CI/CD pipeline and deployment infrastructure from scratch.",
@@ -125,7 +126,7 @@
   "2019",
   "Research Support",
   "UCLouvain — Earth and Life Institute",
-  note: "Extended thesis research; contributed to hydrodynamic model quality.",
+  note: "Extended research from my M.Sc. dissertation; contributed to hydrodynamic model quality.",
 )
 
 // ── Education ───────────────────────────────────────────────────────────────
