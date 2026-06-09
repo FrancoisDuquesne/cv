@@ -747,8 +747,9 @@ button, a { touch-action: manipulation; }
         const note = typeof t === "object" && t.note ? `<span class="skill-note">${t.note}</span>` : "";
         return `<span class="project-tag">${name}${note}</span>`;
       }).join("");
+      const isExternal = proj.link && proj.link.url.startsWith("http");
       const linkHtml = proj.link
-        ? `<a class="project-link" href="${proj.link.url}" target="_blank" rel="noreferrer noopener">${proj.link.label} ↗</a>`
+        ? `<a class="project-link" href="${proj.link.url}"${isExternal ? ' target="_blank" rel="noreferrer noopener"' : ""}>${proj.link.label} ↗</a>`
         : "";
       const card = el("div", "project-card", `
         <div class="project-card-title">${proj.title}</div>
@@ -759,6 +760,12 @@ button, a { touch-action: manipulation; }
           ${linkHtml}
         </div>
       `);
+      if (proj.link && !isExternal) {
+        card.style.cursor = "pointer";
+        card.addEventListener("click", (e) => {
+          if (!e.target.closest("a")) window.location.href = proj.link.url;
+        });
+      }
       if (idx >= 6) {
         card.style.display = "none";
         extraCards.push(card);

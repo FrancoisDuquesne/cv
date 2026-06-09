@@ -135,9 +135,9 @@ window.siteData = {
       title: "Browser Games",
       meta: "Personal projects · For fun",
       description:
-        "I build small browser games in my spare time. Current examples: a space colony life-support simulator and an aquarium simulation. An excuse to explore game loops, real-time state, and interactive rendering.",
+        "Small games I build in my spare time: a Mars colony life-support simulator, a cozy cat café on the moon, and an aquarium simulation. An excuse to explore game loops, real-time state, and interactive rendering.",
       tags: ["JavaScript", "Vue", "Game dev"],
-      link: { label: "GitHub", url: "https://github.com/FrancoisDuquesne/Life-Support" },
+      link: { label: "View games", url: "games.html" },
     },
     {
       title: "Lake Titicaca Ecosystem Model",
